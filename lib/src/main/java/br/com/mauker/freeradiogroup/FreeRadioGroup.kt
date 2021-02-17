@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.CompoundButton
 import android.widget.RadioButton
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 
 class FreeRadioGroup @JvmOverloads constructor(
     mContext: Context,
@@ -74,19 +73,15 @@ class FreeRadioGroup @JvmOverloads constructor(
 
             initAttrs(attributeSet)
             addOnAttachStateChangeListener(onAttachListener)
-            checkIfNeedsConstraints()
         }
     }
 
     private fun initAttrs(attributeSet: AttributeSet?) {
         val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.FreeRadioGroup)
 
-        for (i in 0..typedArray.indexCount) {
-            val attr = typedArray.getIndex(i)
-            if (attr == R.styleable.FreeRadioGroup_referenced_ids) {
-                referenceIds = typedArray.getString(i) ?: EMPTY_STRING
-                setIds()
-            }
+        if (typedArray.hasValue(R.styleable.FreeRadioGroup_referenced_ids)) {
+            referenceIds = typedArray.getString(R.styleable.FreeRadioGroup_referenced_ids) ?: EMPTY_STRING
+            setIds()
         }
 
         if (typedArray.hasValue(R.styleable.FreeRadioGroup_checkedRadioButton)) {
@@ -160,7 +155,7 @@ class FreeRadioGroup @JvmOverloads constructor(
         }
 
         if (tag != 0) {
-            ids.add(tag)
+            setTag(tag, null)
         } else {
             Log.w("FreeRadioGroup", "Could not find id of \"$idStrTrimmed\"")
         }
@@ -218,22 +213,6 @@ class FreeRadioGroup @JvmOverloads constructor(
         }
     }
 
-    private fun checkIfNeedsConstraints() {
-        val container = parent
-
-        if (container is ConstraintLayout) {
-            val cs = ConstraintSet()
-            cs.clone(container)
-
-            cs.connect(id, ConstraintSet.TOP, container.id, ConstraintSet.TOP)
-            cs.connect(id, ConstraintSet.BOTTOM, container.id, ConstraintSet.BOTTOM)
-            cs.connect(id, ConstraintSet.LEFT, container.id, ConstraintSet.LEFT)
-            cs.connect(id, ConstraintSet.RIGHT, container.id, ConstraintSet.RIGHT)
-
-            cs.applyTo(container)
-        }
-    }
-
     // region Public methods
 
     fun check(id: Int) {
@@ -273,6 +252,10 @@ class FreeRadioGroup @JvmOverloads constructor(
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         setMeasuredDimension(0,0)
+    }
+
+    override fun setTag(tag: Int, value: Any?) {
+        ids.add(tag)
     }
 
     //endregion
