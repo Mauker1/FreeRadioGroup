@@ -51,23 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:referenced_ids="radioButton,radioButton2,radioButton3"
-        app:checkedRadioButton="@id/radioButton2"/>
-
-<!--    <RadioGroup-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:checkedButton="@id/radioButton3">-->
-
-<!--        <RadioButton-->
-<!--            android:id="@+id/radioButton3"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="16dp"-->
-<!--            android:text="RadioButton3"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    </RadioGroup>-->
+        app:checkedRadioButton="@id/radioButton2"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
