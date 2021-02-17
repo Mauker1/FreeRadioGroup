@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <br.com.mauker.lib.freeradiogroup.FreeRadioGroup
+    <br.com.mauker.freeradiogroup.FreeRadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

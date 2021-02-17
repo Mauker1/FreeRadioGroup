@@ -1,4 +1,4 @@
-package br.com.mauker.lib.freeradiogroup
+package br.com.mauker.freeradiogroup
 
 import android.content.Context
 import android.graphics.Canvas

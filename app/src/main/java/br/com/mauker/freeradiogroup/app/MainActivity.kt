@@ -1,11 +1,11 @@
-package br.com.mauker.freeradiogroup
+package br.com.mauker.freeradiogroup.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import br.com.mauker.lib.freeradiogroup.FreeRadioGroup
-import br.com.mauker.lib.freeradiogroup.OnCheckedChangeListener
+import br.com.mauker.freeradiogroup.FreeRadioGroup
+import br.com.mauker.freeradiogroup.OnCheckedChangeListener
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
