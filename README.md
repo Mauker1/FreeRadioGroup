@@ -8,7 +8,7 @@ FreeRadioGroup is an Android library that allows grouping radio buttons without 
 
 <a href='https://ko-fi.com/A623L7G' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=f' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-<img src='hhttps://i.stack.imgur.com/WZE9c.gif' width='216' height='480' />
+<img src='https://i.stack.imgur.com/WZE9c.gif' width='216' height='480' />
 
 
 # Download
