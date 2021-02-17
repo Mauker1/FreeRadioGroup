@@ -11,7 +11,7 @@ FreeRadioGroup is an Android library that allows grouping radio buttons without 
 To add `FreeRadioGroup` to your project add the following gradle dependency:
 
 ```kotlin
-implementation 'br.com.mauker:freeradiogroup:1.0.0'
+implementation 'br.com.mauker:freeradiogroup:1.0.1'
 ```
 
 Also make sure to have `JCenter()` in your gradle repositories.
