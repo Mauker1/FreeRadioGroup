@@ -62,12 +62,6 @@ class FreeRadioGroup @JvmOverloads constructor(
         }
     }
 
-    fun setOnCheckedChangeListener(listener: OnCheckedChangeListener) {
-        onCheckedChangeListener = listener
-    }
-
-    fun getCheckedRadioButtonId() = checkedId
-
     init {
         if (isInEditMode.not()) {
             importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO
@@ -240,6 +234,8 @@ class FreeRadioGroup @JvmOverloads constructor(
         }
     }
 
+    // region Public methods
+
     fun check(id: Int) {
         if (id != NO_ID && (id == checkedId)) {
             return
@@ -260,21 +256,24 @@ class FreeRadioGroup @JvmOverloads constructor(
         check(NO_ID)
     }
 
+
+    fun setOnCheckedChangeListener(listener: OnCheckedChangeListener) {
+        onCheckedChangeListener = listener
+    }
+
+    fun getCheckedRadioButtonId() = checkedId
+
+    //endregion
+
     // region View super methods
 
     override fun onDraw(canvas: Canvas?) {
         // Just don't.
     }
 
-//    override fun setVisibility(visibility: Int) {
-//        // Don't.
-//    }
-
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         setMeasuredDimension(0,0)
     }
-
-
 
     //endregion
 }
